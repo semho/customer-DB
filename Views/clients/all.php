@@ -24,16 +24,27 @@
         <span><a href = "/auto/Authentication">Авторизация</a></span> || <span><a href = "/auto/Reg">Регистрация</a></span> || <span><a href="/auto/Logout">Выход</a></span>
     </div>
     <div class="clear"></div>
-    <div class ="news">
+    <div class ="clients">
+        <table>
+            <tr>
+                <th>Имя</th>
+                <th>Фамилия</th>
+                <th>Отчество</th>
+                <th>Марка машины</th>
+                <th>Модель</th>
+                <th>Ссылка</th>
+            </tr>
         <?php foreach ($items as $item):?>
-            <div>
-                <h3>
-                    <a href = "/clients/OneShow?id=<?=$item->id?>" >
-                        <?php echo $item->name; ?>
-                    </a>
-                </h3>
-            </div>
+            <tr>
+                <td><?php echo $item->name; ?></td>
+                <td><?php echo $item->second; ?></td>
+                <td><?php echo $item->middle; ?></td>
+                <td><?php echo $item->auto_marka; ?></td>
+                <td><?php echo $item->auto_model; ?></td>
+                <td><a href = "/clients/OneShow?id=<?=$item->id?>" >Переход на детальный просмотр</a></td>
+            </tr>
         <?php endforeach; ?>
+        </table>
     </div>
 </section>
 <footer>
