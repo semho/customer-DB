@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Администратор
+ * User: пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
  * Date: 06.10.2015
  * Time: 10:28
  */
@@ -15,8 +15,11 @@ class Clients
 {
     protected static $table = 'clients';
 
-    public $title;
-    public $text;
+    public $name;
+    public $second;
+    public $middle;
+    public $auto_marka;
+    public $auto_model;
     public $data_a;
     public $id;
 } 
