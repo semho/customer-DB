@@ -1,0 +1,109 @@
+html, body{
+    height: 100%;
+}
+body {
+    margin: auto;
+    width: 80%;
+}
+#main{
+    height: auto !important;
+    margin: 0 auto -60px;
+    min-height: 100%;
+}
+
+footer{
+    height: 30px;
+}
+footer div{
+    line-height: 30px;
+}
+.news > div h3{
+    padding: 0;
+    margin: 0;
+}
+.news > div{
+    display: block;
+    border: 1px dashed #DEDEDE;
+    padding: 10px;
+    width: 25%;
+}
+
+.news > div:nth-child(2n+2){
+    background: #DEDEDE;
+}
+.news a {
+    margin-left: -10px;
+    padding: 12px 50px 12px 12px;
+}
+.news > div:hover{
+    background: #A3A6A0;
+}
+.page_news {
+    border: 1px solid #dedede;
+    margin-top: 50px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.page_news h3 {
+    padding: 0;
+    margin: 0;
+    padding-bottom: 15px;
+    padding-left: 20px;
+    padding-top: 15px;
+    background: none repeat scroll 0 0 gold;
+    border-bottom: 1px solid #dedede;
+}
+
+.page_news > div {
+    margin: 20px 10px 10px;
+}
+#form_add_news {
+    margin-top: 40px;
+}
+#form_add_news label {
+    font-size: 20px;
+}
+#form_add_news input {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+#title {
+    width: 20%;
+    padding: 5px 7px;
+}
+#title:focus{
+    background: #C4C6C3;
+}
+#form_add_news textarea {
+    width: 40%;
+    resize: none;
+    height: 200px;
+    padding: 10px;
+}
+#form_add_news textarea:focus{
+    background: #C4C6C3;
+}
+#submit {
+    cursor: pointer;
+    margin-left: 227px;
+    padding: 8px;
+    width: 200px;
+}
+#error {
+     color: red;
+ }
+#message {
+    color: green;
+}
+.links{
+    float: left;
+}
+.auto{
+    float: right;
+}
+
+.clear {
+    clear: both;
+}
