@@ -107,3 +107,15 @@ footer div{
 .clear {
     clear: both;
 }
+
+.clients {
+    margin-top: 20px;
+}
+
+.clients th {
+    border: 2px solid;
+}
+
+.clients td {
+    border: 1px outset;
+}

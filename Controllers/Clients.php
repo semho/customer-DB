@@ -29,6 +29,6 @@ class Clients
     {
         $id = $_GET['id'];
         $this->view->items = Model::findOne($id);
-        $this->view->display('article');
+        $this->view->display('client');
     }
 } 

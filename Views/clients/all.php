@@ -2,7 +2,7 @@
 <html>
 <head lang="ru">
     <meta charset="utf-8">
-    <title>Сайт для второго курса PHP</title>
+    <title>Клиентская база</title>
     <link rel="stylesheet" href="/css/style.css" media="screen">
 </head>
 <body>
@@ -14,9 +14,9 @@
     <? if (\App\Classes\App::isAdmin()) { ?>
     <ul class="links">
         <li>
-            <!--<a href="/admin/ViewFormNews">-->
+            <a href="/adminclients/ViewFormNews">
                 Добавить клиента
-            <!--</a>-->
+            </a>
         </li>
     </ul>
     <? } ?>
@@ -25,7 +25,7 @@
     </div>
     <div class="clear"></div>
     <div class ="clients">
-        <table>
+        <table cellspacing="0" cellpadding="5" border="1" width="100%">
             <tr>
                 <th>Имя</th>
                 <th>Фамилия</th>
