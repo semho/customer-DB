@@ -46,13 +46,10 @@ class Adminclients
         $name = $_POST['name'];
         $second = $_POST['second'];
         $middle = $_POST['middle'];
-        $auto_marka = $_POST['auto_marka'];
-        $auto_model = $_POST['auto_model'];
         $client->name = $name;
         $client->second = $second;
         $client->middle = $middle;
-        $client->auto_marka = $auto_marka;
-        $client->auto_model = $auto_model;
+        $client->data_a = date('Y-m-d h:i:s');
         $client->insert();
        /* $send = new SendMail(); //отправка письма
         if ( $send->send()){*/
@@ -67,8 +64,6 @@ class Adminclients
         $client->name = $_POST['name'];
         $client->second = $_POST['second'];
         $client->middle = $_POST['middle'];
-        $client->auto_marka = $_POST['auto_marka'];
-        $client->auto_model = $_POST['auto_model'];
         $client->update();
         header("Location: http://" . $_SERVER['SERVER_NAME'] . "/" );
     }

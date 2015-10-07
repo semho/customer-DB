@@ -13,6 +13,7 @@
         <?if (\App\Classes\App::isAdmin($_SESSION['user']['id'])) {?>
             <li><a href="/adminclients/ViewFormNews?id=<?=$items->id?>">Редактировать клиента</a></li>
             <li><a href="/adminclients/DeleteNews?id=<?=$items->id?>">Удалить клиента</a></li>
+            <li><a href="/adminCars/ViewFormCars?client_id=<?=$items->id?>">Добавить автомобиль</a></li>
         <?}?>
     </ul>
     <div class ="page_client">
@@ -21,16 +22,12 @@
                 <th>Имя</th>
                 <th>Фамилия</th>
                 <th>Отчество</th>
-                <th>Марка машины</th>
-                <th>Модель</th>
                 <th>Ссылка</th>
             </tr>
             <tr>
                 <td><?php echo $items->name; ?></td>
                 <td><?php echo $items->second; ?></td>
                 <td><?php echo $items->middle; ?></td>
-                <td><?php echo $items->auto_marka; ?></td>
-                <td><?php echo $items->auto_model; ?></td>
                 <td><a href = "/cars/AllShowCars?id=<?=$items->id?>">Список машин</a></td>
             </tr>
         </table>

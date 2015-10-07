@@ -21,12 +21,6 @@
         <label>Отчество<br>
             <input type="text" name="middle" id = "middle" value="<?=$items->middle?>">
         </label><br>
-        <label>Марка автомобиля<br>
-            <input type="text" name="auto_marka" id = "auto_marka" value="<?=$items->auto_marka?>">
-        </label><br>
-        <label>Модель автомобиля<br>
-            <input type="text" name="auto_model" id = "auto_model" value="<?=$items->auto_model?>">
-        </label><br>
         <input type="hidden" value="Y" name = "hidden">
         <input type="hidden" value="<?=$_GET['id']?>" name = "id_hidden">
         <input type="submit" value="Добавить" id = "submit">

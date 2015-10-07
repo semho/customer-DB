@@ -18,8 +18,6 @@ class Clients
     public $name;
     public $second;
     public $middle;
-    public $auto_marka;
-    public $auto_model;
     public $data_a;
     public $id;
 } 

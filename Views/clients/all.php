@@ -30,8 +30,6 @@
                 <th>Имя</th>
                 <th>Фамилия</th>
                 <th>Отчество</th>
-                <th>Марка машины</th>
-                <th>Модель</th>
                 <th>Ссылка</th>
             </tr>
         <?php foreach ($items as $item):?>
@@ -39,8 +37,6 @@
                 <td><?php echo $item->name; ?></td>
                 <td><?php echo $item->second; ?></td>
                 <td><?php echo $item->middle; ?></td>
-                <td><?php echo $item->auto_marka; ?></td>
-                <td><?php echo $item->auto_model; ?></td>
                 <td><a href = "/clients/OneShow?id=<?=$item->id?>" >Переход на детальный просмотр</a></td>
             </tr>
         <?php endforeach; ?>
