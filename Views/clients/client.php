@@ -17,7 +17,7 @@
         <?}?>
     </ul>
     <div class ="page_client">
-        <table>
+        <table cellspacing="0" cellpadding="5" border="1" width="100%">
             <tr>
                 <th>Имя</th>
                 <th>Фамилия</th>
