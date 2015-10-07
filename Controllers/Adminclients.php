@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Администратор
+ * User: РђРґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂ
  * Date: 06.10.2015
  * Time: 12:42
  */
@@ -19,13 +19,13 @@ class Adminclients
     public $article;
     public  function __construct()
     {
-        //путь до папки шаблонов
+        //РїСѓС‚СЊ РґРѕ РїР°РїРєРё С€Р°Р±Р»РѕРЅРѕРІ
         $this->path = __DIR__ . '/../Views/clients/';
         parent::__construct();
         if (!App::isAdmin()) {
-            throw new E403Exception('403. Доступ запрещен.');
+            throw new E403Exception('403. Р”РѕСЃС‚СѓРї Р·Р°РїСЂРµС‰РµРЅ.');
         }
     }
-    
+
 
 } 
