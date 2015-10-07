@@ -11,8 +11,8 @@
     <ul>
         <li><a href="/">Вернуться на главную страницу</a></li>
         <?if (\App\Classes\App::isAdmin($_SESSION['user']['id'])) {?>
-            <li><a href="/admin/ViewFormNews?id=<?=$items->id?>">Редактировать новость</a></li>
-            <li><a href="/admin/DeleteNews?id=<?=$items->id?>">Удалить новость</a></li>
+            <li><a href="/adminclients/ViewFormNews?id=<?=$items->id?>">Редактировать клиента</a></li>
+            <li><a href="/adminclients/DeleteNews?id=<?=$items->id?>">Удалить клиента</a></li>
         <?}?>
     </ul>
     <div class ="page_client">

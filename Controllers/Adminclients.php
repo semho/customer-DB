@@ -16,7 +16,7 @@ class Adminclients
     extends AbstractController
 {
     public $path;
-    public $article;
+    public $client;
     public  function __construct()
     {
         //путь до папки шаблонов
@@ -25,6 +25,58 @@ class Adminclients
         if (!App::isAdmin()) {
             throw new E403Exception('403. Доступ запрещен.');
         }
+    }
+
+    public function actionViewFormNews(){
+        if (isset($_GET['id']) && !empty($_GET['id'])) {
+            $this->view->items = ModelClients::findOne($_GET['id']);
+        }
+        $this->view->display('form');
+    }
+    public function actionSave(){
+        if (isset($_POST['id_hidden']) && !empty($_POST['id_hidden'])) {
+            $this->actionUpdateNews($_POST['id_hidden']);
+        } else {
+            $this->actionAddNews();
+        }
+    }
+    public function actionAddNews()
+    {
+        $client = new ModelClients();
+        $name = $_POST['name'];
+        $second = $_POST['second'];
+        $middle = $_POST['middle'];
+        $auto_marka = $_POST['auto_marka'];
+        $auto_model = $_POST['auto_model'];
+        $client->name = $name;
+        $client->second = $second;
+        $client->middle = $middle;
+        $client->auto_marka = $auto_marka;
+        $client->auto_model = $auto_model;
+        $client->insert();
+       /* $send = new SendMail(); //отправка письма
+        if ( $send->send()){*/
+            header("Location: http://" . $_SERVER['SERVER_NAME'] . "/" );
+        /*} else {
+            throw new \Exception("Ошибка при отправлении письма о добавлении новости!");
+        }*/
+    }
+    public function actionUpdateNews($id)
+    {
+        $client = ModelClients::findOne($id);
+        $client->name = $_POST['name'];
+        $client->second = $_POST['second'];
+        $client->middle = $_POST['middle'];
+        $client->auto_marka = $_POST['auto_marka'];
+        $client->auto_model = $_POST['auto_model'];
+        $client->update();
+        header("Location: http://" . $_SERVER['SERVER_NAME'] . "/" );
+    }
+    public function actionDeleteNews()
+    {
+        $client = ModelClients::findOne($_GET['id']);
+        $client->delete();
+        header("Location: http://" . $_SERVER['SERVER_NAME'] . "/" );
     }
 
 
