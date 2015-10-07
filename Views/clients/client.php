@@ -31,7 +31,7 @@
                 <td><?php echo $items->middle; ?></td>
                 <td><?php echo $items->auto_marka; ?></td>
                 <td><?php echo $items->auto_model; ?></td>
-                <td>тык</td>
+                <td><a href = "/cars/AllShowCars?id=<?=$items->id?>">Список машин</a></td>
             </tr>
         </table>
     </div>
