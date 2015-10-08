@@ -16,7 +16,7 @@
             <li><a href="/adminCars/ViewFormCars?client_id=<?=$items->id?>">Добавить автомобиль</a></li>
         <?}?>
     </ul>
-    <div class ="page_client">
+    <div class ="clients">
         <table cellspacing="0" cellpadding="5" border="1" width="100%">
             <tr>
                 <th>Имя</th>

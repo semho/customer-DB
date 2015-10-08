@@ -119,3 +119,10 @@ footer div{
 .clients td {
     border: 1px outset;
 }
+
+.clients tr:nth-child(2n+2) {
+    background: #ffa000 none repeat scroll 0 0;
+}
+.clients tr:nth-child(1){
+    background: #B1AAAA;
+}
