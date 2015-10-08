@@ -25,22 +25,24 @@
     </div>
     <div class="clear"></div>
     <div class ="clients">
-        <table cellspacing="0" cellpadding="5" border="1" width="100%">
-            <tr>
-                <th>Имя</th>
-                <th>Фамилия</th>
-                <th>Отчество</th>
-                <th>Ссылка</th>
-            </tr>
-        <?php foreach ($items as $item):?>
-            <tr>
-                <td><?php echo $item->name; ?></td>
-                <td><?php echo $item->second; ?></td>
-                <td><?php echo $item->middle; ?></td>
-                <td><a href = "/clients/OneShow?id=<?=$item->id?>" >Переход на детальный просмотр</a></td>
-            </tr>
-        <?php endforeach; ?>
-        </table>
+        <? if (is_array($items) && !empty($items)):?>
+            <table cellspacing="0" cellpadding="5" border="1" width="100%">
+                <tr>
+                    <th>Имя</th>
+                    <th>Фамилия</th>
+                    <th>Отчество</th>
+                    <th>Ссылка</th>
+                </tr>
+            <?php foreach ($items as $item):?>
+                <tr>
+                    <td><?php echo $item->name; ?></td>
+                    <td><?php echo $item->second; ?></td>
+                    <td><?php echo $item->middle; ?></td>
+                    <td><a href = "/clients/OneShow?id=<?=$item->id?>" >Переход на детальный просмотр</a></td>
+                </tr>
+            <?php endforeach; ?>
+            </table>
+        <?endif;?>
     </div>
 </section>
 <footer>

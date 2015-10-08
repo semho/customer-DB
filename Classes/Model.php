@@ -5,7 +5,7 @@ use App\Exceptions\E404Exception;
 abstract class Model
 {
 
-    protected static $table;
+    protected static    $table;
 
     public $id;
 
