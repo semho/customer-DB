@@ -11,7 +11,7 @@
     <ul>
         <li><a href="/">Вернуться на главную страницу</a></li>
         <? if (\App\Classes\App::isAdmin()) { ?>
-            <li><a href="/adminOrders/ViewFormOrders?client_id=<?=$items[0]->cars_id?>">Добавить заказ</a></li>
+            <li><a href="/adminOrders/ViewFormOrders?cars_id=<?=$items[0]->cars_id?>">Добавить заказ</a></li>
         <?}?>
     </ul>
     <div class ="clients">

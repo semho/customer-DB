@@ -20,7 +20,7 @@
                 <th>Марка машины</th>
                 <th>Модель</th>
                 <th>VIN</th>
-                <th>Заказы на авто</th>
+                <th colspan="2">Заказы на авто</th>
             </tr>
             <?php foreach ($items as $item):?>
             <tr>
@@ -28,6 +28,7 @@
                 <td><?php echo $item->auto_model; ?></td>
                 <td><?php echo $item->VIN; ?></td>
                 <td><a href="/orders/AllShowOrders?id=<?=$item->id?>">Перейти к заказам</a></td>
+                <td><a href="/adminOrders/ViewFormOrders?cars_id=<?=$item->id?>">Создать заказ</a></td>
                 <? if (\App\Classes\App::isAdmin()) { ?>
                 <td><a href="/adminCars/ViewFormCars?id=<?=$item->id?>">Редактировать автомобиль</a></td>
                 <td><a href="/adminCars/DeleteCars?id=<?=$item->id?>">Удалить автомобиль</a></td>
