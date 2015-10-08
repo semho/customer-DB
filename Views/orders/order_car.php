@@ -11,7 +11,7 @@
     <ul>
         <li><a href="/">Вернуться на главную страницу</a></li>
         <? if (\App\Classes\App::isAdmin()) { ?>
-            <li><a href="/adminOrders/ViewFormCars?client_id=<?=$items[0]->cars_id?>">Добавить заказ</a></li>
+            <li><a href="/adminOrders/ViewFormOrders?client_id=<?=$items[0]->cars_id?>">Добавить заказ</a></li>
         <?}?>
     </ul>
     <div class ="clients">
@@ -25,8 +25,8 @@
                     <td><?php echo $item->engine; ?></td>
                     <td><?php echo $item->suspension_system; ?></td>
                     <? if (\App\Classes\App::isAdmin()) { ?>
-                        <td><a href="/adminOrders/ViewFormCars?id=<?=$item->id?>">Редактировать заказ</a></td>
-                        <td><a href="/adminOrders/DeleteCars?id=<?=$item->id?>">Удалить заказ</a></td>
+                        <td><a href="/adminOrders/ViewFormOrders?id=<?=$item->id?>">Редактировать заказ</a></td>
+                        <td><a href="/adminOrders/DeleteOrders?id=<?=$item->id?>">Удалить заказ</a></td>
                     <?}?>
                 </tr>
             <?endforeach;?>
