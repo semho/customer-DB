@@ -31,7 +31,7 @@ class View
         include($this->path . '/' . $template . '.php');
         $contents = ob_get_contents();
         ob_end_clean();
-        $contents = preg_replace('/<copyright>/i', '&copy; Author 2015', $contents);
+        $contents = preg_replace('/<copyright>/i', '&copy; semho 2015', $contents);
         return $contents;
     }
 
