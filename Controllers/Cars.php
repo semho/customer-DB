@@ -22,8 +22,10 @@ class Cars
     }
     public function actionAllShowCars()
     {
+        // связь таблиц clients и cars по id(clients) и client_id(cars)
         $id = $_GET['id'];
-        $this->view->items = Model::findAllUserId($id);
+        $field = 'client_id';
+        $this->view->items = Model::findAllUserId($id, $field);
         $this->view->display('cars_client');
     }
 } 

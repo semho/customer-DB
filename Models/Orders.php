@@ -14,6 +14,7 @@ class Orders
 {
     protected static $table = 'orders';
 
+    public $cars_id;
     public $engine;
     public $suspension_system;
     public $data_a;

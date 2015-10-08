@@ -27,7 +27,7 @@
                 <td><?php echo $item->auto_marka; ?></td>
                 <td><?php echo $item->auto_model; ?></td>
                 <td><?php echo $item->VIN; ?></td>
-                <td><?php echo $item->VIN; ?></td>
+                <td><a href="/orders/AllShowOrders?id=<?=$item->id?>">Перейти к заказам</a></td>
                 <? if (\App\Classes\App::isAdmin()) { ?>
                 <td><a href="/adminCars/ViewFormCars?id=<?=$item->id?>">Редактировать автомобиль</a></td>
                 <td><a href="/adminCars/DeleteCars?id=<?=$item->id?>">Удалить автомобиль</a></td>

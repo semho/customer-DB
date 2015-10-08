@@ -32,10 +32,10 @@ abstract class Model
             throw new E404Exception('404. Не найдено.');
         }
     }
-    public static function findAllUserId($id)
+    public static function findAllUserId($id, $field)
     {
         $class = static::class;
-        $sql = 'SELECT * FROM ' .static::getTable() . ' WHERE client_id=:id';
+        $sql = 'SELECT * FROM ' .static::getTable() . ' WHERE '.$field.'=:id';
         $db = new DataBase();
         $res = $db->findAll($class, $sql, [':id' => $id]);
         if ($res){
