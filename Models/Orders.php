@@ -15,8 +15,12 @@ class Orders
     protected static $table = 'orders';
 
     public $cars_id;
-    public $engine;
-    public $suspension_system;
+    public $part;
+    public $article;
+    public $OE;
+    public $provider;
+    public $quantity;
+    public $price;
     public $data_a;
     public $id;
 }

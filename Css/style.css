@@ -126,3 +126,6 @@ footer div{
 .clients tr:nth-child(1){
     background: #B1AAAA;
 }
+.DB {
+    float: right;
+}

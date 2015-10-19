@@ -21,6 +21,9 @@
         <label>Отчество<br>
             <input type="text" name="middle" id = "middle" value="<?=$items->middle?>">
         </label><br>
+        <label>Номер телефона<br>
+            <input type="text" name="phone" id = "phone" value="<?=$items->phone?>">
+        </label><br>
         <input type="hidden" value="Y" name = "hidden">
         <input type="hidden" value="<?=$_GET['id']?>" name = "id_hidden">
         <input type="submit" value="Добавить" id = "submit">

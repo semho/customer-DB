@@ -18,6 +18,7 @@ class Clients
     public $name;
     public $second;
     public $middle;
+    public $phone;
     public $data_a;
     public $id;
 } 

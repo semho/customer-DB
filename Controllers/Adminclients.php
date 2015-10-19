@@ -49,6 +49,7 @@ class Adminclients
         $client->name = $name;
         $client->second = $second;
         $client->middle = $middle;
+        $client->phone = $_POST['phone'];
         $client->data_a = date('Y-m-d h:i:s');
         $client->insert();
        /* $send = new SendMail(); //отправка письма

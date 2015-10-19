@@ -18,6 +18,11 @@ class Cars
     public $client_id;
     public $auto_marka;
     public $auto_model;
+    public $year;
+    public $volume;
+    public $power;
+    public $GUR;
+    public $ABS;
     public $VIN;
     public $data_a;
     public $id;
