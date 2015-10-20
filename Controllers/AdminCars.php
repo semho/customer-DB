@@ -28,7 +28,12 @@ class AdminCars
     public function actionDeleteCars()
     {
         $car = ModelCars::findOne($_GET['id']);
-        $car->delete();
+        //указываем связанные таблицы и поля в формате deleteRelatedRecords($table1, $table2, $field1, $field2)
+        //$car->deleteRelatedRecords('orders', 'NULL', 'cars_id', 'NULL');
+
+        $sql_cars = 'DELETE FROM cars WHERE id=:id';
+        $sql_orders = 'DELETE FROM orders WHERE cars_id=:id';
+        $car->deleteRecords($sql_orders, $sql_cars);
         header("Location: http://" . $_SERVER['SERVER_NAME'] . "/cars/AllShowCars?id=".$car->client_id );
     }
     public function actionViewFormCars(){
@@ -49,6 +54,11 @@ class AdminCars
         $car = ModelCars::findOne($id);
         $car->auto_marka = $_POST['auto_marka'];
         $car->auto_model = $_POST['auto_model'];
+        $car->year = $_POST['year'];
+        $car->volume = $_POST['volume'];
+        $car->power = $_POST['power'];
+        $car->GUR = $_POST['gur'];
+        $car->ABS = $_POST['abs'];
         $car->VIN = $_POST['vin'];
         $car->update();
         header("Location: http://" . $_SERVER['SERVER_NAME'] . "/cars/AllShowCars?id=" .$car->client_id );
@@ -58,9 +68,14 @@ class AdminCars
         $car = new ModelCars();
         $car->auto_marka = $_POST['auto_marka'];
         $car->auto_model = $_POST['auto_model'];
+        $car->year = $_POST['year'];
+        $car->volume = $_POST['volume'];
+        $car->power = $_POST['power'];
+        $car->GUR = $_POST['gur'];
+        $car->ABS = $_POST['abs'];
         $car->VIN = $_POST['vin'];
         $car->client_id = $_POST['client_id_hidden'];
-        $car->data_a = date('Y-m-d h:i:s');
+        $car->data_a = date('Y-m-d H:i:s');
         $car->insert();
         header("Location: http://" . $_SERVER['SERVER_NAME'] . "/cars/AllShowCars?id=" . $_POST['client_id_hidden'] );
     }

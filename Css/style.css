@@ -129,3 +129,6 @@ footer div{
 .DB {
     float: right;
 }
+select {
+    width: 145px;
+}

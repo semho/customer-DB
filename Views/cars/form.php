@@ -18,6 +18,29 @@
         <label>Модель автомобиля<br>
             <input type="text" name="auto_model" id = "auto_model" value="<?=$items->auto_model?>">
         </label><br>
+        <label>Год<br>
+            <input type="text" name="year" id = "year" value="<?=$items->year?>">
+        </label><br>
+        <label>Объем<br>
+            <input type="text" name="volume" id = "volume" value="<?=$items->volume?>">
+        </label><br>
+        <label>Л.с.<br>
+            <input type="text" name="power" id = "power" value="<?=$items->power?>">
+        </label><br>
+        <label>ГУР<br>
+            <select name="gur">
+                <option disabled selected >Есть ГУР?</option>
+                <option value="да" <?if ($items->GUR == "да"){?>selected<?}?>>Да</option>
+                <option value="нет" <?if ($items->GUR == "нет"){?>selected<?}?>>Нет</option>
+            </select>
+        </label><br>
+        <label>ABS<br>
+            <select name="abs">
+                <option disabled selected >Есть ABS?</option>
+                <option value="да" <?if ($items->ABS == "да"){?>selected<?}?>>Да</option>
+                <option value="нет" <?if ($items->ABS == "нет"){?>selected<?}?>>Нет</option>
+            </select>
+        </label><br>
         <label>VIN<br>
             <input type="text" name="vin" id = "vin" value="<?=$items->VIN?>">
         </label><br>

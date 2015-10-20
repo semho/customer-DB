@@ -17,13 +17,23 @@
     <div class ="clients">
         <table cellspacing="0" cellpadding="5" border="1" width="100%">
             <tr>
-                <th>Двигатель</th>
-                <th>Система подвески</th>
+                <th>Запчасть</th>
+                <th>Артикул</th>
+                <th>ОЕ</th>
+                <th>Поставщик</th>
+                <th>Количество</th>
+                <th>Цена</th>
+                <th>Дата</th>
             </tr>
             <?php foreach ($items as $item):?>
                 <tr>
-                    <td><?php echo $item->engine; ?></td>
-                    <td><?php echo $item->suspension_system; ?></td>
+                    <td><?php echo $item->part; ?></td>
+                    <td><?php echo $item->article; ?></td>
+                    <td><?php echo $item->OE; ?></td>
+                    <td><?php echo $item->provider; ?></td>
+                    <td><?php echo $item->quantity; ?></td>
+                    <td><?php echo $item->price; ?></td>
+                    <td><?php echo $item->data_a; ?></td>
                     <? if (\App\Classes\App::isAdmin()) { ?>
                         <td><a href="/adminOrders/ViewFormOrders?id=<?=$item->id?>">Редактировать заказ</a></td>
                         <td><a href="/adminOrders/DeleteOrders?id=<?=$item->id?>">Удалить заказ</a></td>

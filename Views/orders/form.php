@@ -12,11 +12,23 @@
         <li><a href="/">Вернуться на главную страницу</a></li>
     </ul>
     <form method="post" id = "form_add_news" action="/adminOrders/Save">
-        <label>Двигатель<br>
-            <textarea name="engine"><?=$items->engine?></textarea>
+        <label>Запчасть<br>
+            <textarea name="part"><?=$items->part?></textarea>
         </label><br>
-        <label>Система подвески<br>
-            <textarea name="suspension_system"><?=$items->suspension_system?></textarea>
+        <label>Артикул<br>
+            <input type="text" name="article" id = "article" value="<?=$items->article?>">
+        </label><br>
+        <label>ОЕ<br>
+            <input type="text" name="oe" id = "oe" value="<?=$items->OE?>">
+        </label><br>
+        <label>Поставщик<br>
+            <input type="text" name="provider" id = "provider" value="<?=$items->provider?>">
+        </label><br>
+        <label>Количество<br>
+            <input type="text" name="quantity" id = "quantity" value="<?=$items->quantity?>">
+        </label><br>
+        <label>Цена<br>
+            <input type="text" name="price" id = "price" value="<?=$items->price?>">
         </label><br>
         <input type="hidden" value="Y" name = "hidden">
         <input type="hidden" value="<?=$_GET['id']?>" name = "id_hidden">

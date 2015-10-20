@@ -85,6 +85,37 @@ abstract class Model
         $db = new DataBase();
         return $db->execute($sql,  [':id' => $this->id]);
     }
+
+    public function deleteRecords($sql_orders, $sql_cars, $sql_clients = NULL)
+    {
+        $db = new DataBase();
+        if ($sql_clients != NULL) {
+            $res_clients = $db->execute($sql_clients,  [':id' => $this->id]);
+        }
+        $res_orders = $db->execute($sql_orders,  [':id' => $this->id]);
+        $res_cars = $db->execute($sql_cars,  [':id' => $this->id]);
+        return $res_clients . $res_orders . $res_cars;
+    }
+    //удаляет все связаные по id($field) записи из таблиц($table) переданых в аргуметах метода
+    /*public function deleteRelatedRecords($table1, $table2, $field1, $field2)
+    {
+        $sql_1 = 'DELETE ' .static::getTable() . ','.$table1.','.$table2.' FROM ' .static::getTable() . ','.$table1.','.$table2.' WHERE ' .static::getTable() . '.id=:id AND '.$table1.'.'.$field1.'=:id AND '.$table2.'.'.$field2.'='.$table1.'.id';
+        $sql_2 = 'DELETE FROM ' .$table1 . ' WHERE '.$field1.'=:id';
+        $sql = 'DELETE FROM ' .static::getTable() . ' WHERE id=:id';
+
+        $db = new DataBase();
+        $res_1 =  $db->execute($sql_1,  [':id' => $this->id]);
+        $res_2 =  $db->execute($sql_2,  [':id' => $this->id]);
+        $res = $db->execute($sql,  [':id' => $this->id]);
+        return $res_1 .$res_2. $res ;
+    }
+    public function deleteRelatedThreeRecords($tables, $fields)
+      {
+
+          $sql = 'DELETE ' .static::getTable() . ','.$tables[0].','.$tables[1].' FROM ' .static::getTable() . ','.$tables[0].','.$tables[1].' WHERE ' .static::getTable() . '.id=:id AND '.$tables[0].'.'.$fields[0].'=:id AND '.$tables[1].'.'.$fields[1].'='.$tables[0].'.id';
+          $db = new DataBase();
+          return $db->execute($sql,  [':id' => $this->id]);
+      }*/
     public function getLogin($login, $password)
     {
         $class = static::class;

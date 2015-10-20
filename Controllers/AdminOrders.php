@@ -47,18 +47,26 @@ class AdminOrders
     public function actionUpdateOrders($id)
     {
         $order = ModelOrders::findOne($id);
-        $order->engine = $_POST['engine'];
-        $order->suspension_system = $_POST['suspension_system'];
+        $order->part = $_POST['part'];
+        $order->article = $_POST['article'];
+        $order->OE = $_POST['oe'];
+        $order->provider = $_POST['provider'];
+        $order->quantity = $_POST['quantity'];
+        $order->price = $_POST['price'];
         $order->update();
         header("Location: http://" . $_SERVER['SERVER_NAME'] . "/orders/AllShowOrders?id=" .$order->cars_id );
     }
     public function actionAddOrders()
     {
         $order = new ModelOrders();
-        $order->engine = $_POST['engine'];
-        $order->suspension_system = $_POST['suspension_system'];
+        $order->part = $_POST['part'];
+        $order->article = $_POST['article'];
+        $order->OE = $_POST['oe'];
+        $order->provider = $_POST['provider'];
+        $order->quantity = $_POST['quantity'];
+        $order->price = $_POST['price'];
         $order->cars_id = $_POST['cars_id_hidden'];
-        $order->data_a = date('Y-m-d h:i:s');
+        $order->data_a = date('Y-m-d H:i:s');
         $order->insert();
         header("Location: http://" . $_SERVER['SERVER_NAME'] . "/orders/AllShowOrders?id=" . $_POST['cars_id_hidden'] );
     }

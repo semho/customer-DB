@@ -53,7 +53,7 @@ class DataBase
                           OE VARCHAR(255),
                           provider VARCHAR(255),
                           quantity INT(6),
-                          price INT(11),
+                          price VARCHAR(255),
                           data_a TIMESTAMP
                           )";
 

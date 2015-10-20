@@ -26,6 +26,20 @@ class Adminclients
             throw new E403Exception('403. Доступ запрещен.');
         }
     }
+    public function actionDeleteNews()
+    {
+        $client = ModelClients::findOne($_GET['id']);
+
+        //указываем связанные таблицы и поля в формате deleteRelatedRecords($table1, $table2, $field1, $field2)
+        //$client->deleteRelatedRecords('cars','orders','client_id','cars_id');
+
+        $sql_clients = 'DELETE FROM clients WHERE id=:id';
+        $sql_orders = 'DELETE FROM orders WHERE cars_id IN (SELECT id FROM cars WHERE client_id=:id)';
+        $sql_cars = 'DELETE FROM cars WHERE client_id=:id';
+        $client->deleteRecords($sql_orders, $sql_cars, $sql_clients);
+
+        header("Location: http://" . $_SERVER['SERVER_NAME'] . "/" );
+    }
 
     public function actionViewFormNews(){
         if (isset($_GET['id']) && !empty($_GET['id'])) {
@@ -50,7 +64,7 @@ class Adminclients
         $client->second = $second;
         $client->middle = $middle;
         $client->phone = $_POST['phone'];
-        $client->data_a = date('Y-m-d h:i:s');
+        $client->data_a = date('Y-m-d H:i:s');
         $client->insert();
        /* $send = new SendMail(); //отправка письма
         if ( $send->send()){*/
@@ -68,12 +82,7 @@ class Adminclients
         $client->update();
         header("Location: http://" . $_SERVER['SERVER_NAME'] . "/" );
     }
-    public function actionDeleteNews()
-    {
-        $client = ModelClients::findOne($_GET['id']);
-        $client->delete();
-        header("Location: http://" . $_SERVER['SERVER_NAME'] . "/" );
-    }
+
 
 
 } 
