@@ -42,7 +42,7 @@ class DataBase
                           name VARCHAR(255),
                           second VARCHAR(255),
                           middle VARCHAR(255),
-                          phone INT(10),
+                          phone VARCHAR(255),
                           data_a TIMESTAMP
                           )";
             $sql_orders = "CREATE TABLE IF NOT EXISTS orders (
