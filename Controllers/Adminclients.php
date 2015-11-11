@@ -79,6 +79,7 @@ class Adminclients
         $client->name = $_POST['name'];
         $client->second = $_POST['second'];
         $client->middle = $_POST['middle'];
+        $client->phone = $_POST['phone'];
         $client->update();
         header("Location: http://" . $_SERVER['SERVER_NAME'] . "/" );
     }
